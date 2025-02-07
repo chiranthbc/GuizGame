@@ -1,5 +1,9 @@
 
-const StartScreen  = ({onStart}) =>{
+interface StartScreenProps {
+    onStart: () => void;
+}
+
+const StartScreen: React.FC<StartScreenProps> = ({onStart}) =>{
     return(
         <div className="start-screen">
             <h1>Welcome to the Quiz Game</h1>

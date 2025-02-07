@@ -8,7 +8,7 @@ import StartScreen from './components/StartScreen';
 
 function App() {
   const [gameStarted, setGameStarted] = useState(false); 
-  const [currentLevel, setCurrentLevel] = useState('easy');
+  const [currentLevel, setCurrentLevel] = useState<'easy' | 'medium' | 'hard'>('easy');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
@@ -16,7 +16,7 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [correctAnswersInLevel, setCorrectAnswersInLevel] = useState(0);
 
-  const levels = ['easy', 'medium', 'hard'];
+  const levels = ['easy', 'medium', 'hard'] as const;
   const currentQuestions = questions[currentLevel];
   const currentQuestion = currentQuestions[currentQuestionIndex];
 
@@ -29,7 +29,7 @@ function App() {
     setCorrectAnswersInLevel(0);
   };
 
-  const handleAnswerSubmit = (answer) => {
+  const handleAnswerSubmit = (answer: any) => {
     const isAnswerCorrect = answer === currentQuestion.correctAnswer;
     setIsCorrect(isAnswerCorrect);
 
@@ -108,5 +108,4 @@ const handleNextQuestion = () => {
     </div>
   );
 }
-
 export default App;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const QuestionScreen = ({ question, onSubmit , currentLevel }) => {
+const QuestionScreen = ({ question, onSubmit , currentLevel }:{question:any, onSubmit:(answer:any)=>void, currentLevel:any}) => {
   const [answer, setAnswer] = useState('');
 
   const handleSubmit = () => {
@@ -14,7 +14,7 @@ const QuestionScreen = ({ question, onSubmit , currentLevel }) => {
       <h2>{question.question}</h2>
       {question.type === 'multiple-choice' && (
         <div className="options">
-          {question.options.map((option, index) => (
+          {question.options.map((option: any, index: any) => (
             <label key={index}>
               <input
                 type="radio"

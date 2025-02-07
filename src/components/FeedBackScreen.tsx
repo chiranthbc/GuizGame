@@ -1,4 +1,4 @@
-const FeedbackScreen = ({ isCorrect, onNext }) => {
+const FeedbackScreen = ({ isCorrect, onNext }:{isCorrect:boolean, onNext:()=>void}) => {
     return (
       <div className="feedback-screen">
         <h2>{isCorrect ? 'Correct!' : 'Incorrect!'}</h2>

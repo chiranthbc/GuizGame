@@ -1,4 +1,4 @@
-const EndScreen = ({ score, onRestart , onRetry }) => {
+const EndScreen = ({ score, onRestart , onRetry }: { score: number; onRestart: () => void; onRetry: () => void }) => {
     return (
       <div className="end-screen">
         <h1>Quiz Completed</h1>
